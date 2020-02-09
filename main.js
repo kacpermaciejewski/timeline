@@ -1,25 +1,12 @@
-// const r = document.querySelector('.x')
-// const x = document.querySelector('.timeline__wrapper')
-// const sec = document.querySelector('.timeline__section')
-// let width = sec.offsetWidth;
 
-
-// r.addEventListener('input', () =>{
-//     let v = ((-width*5))/100 ;
-//     x.style.left = parseInt(r.value) * v + "px";
-//     // let b = parseInt(r.value)
-//     // console.log(typeof(b))
-    
-// })
 
 
 const slider = document.querySelector(".slider");
 const arrowBack = document.querySelector(".slidecontainer__back");
 const arrowForward = document.querySelector(".slidecontainer__forward")
 
-arrowBack.addEventListener("click", () =>{
-    slider.value = parseInt(slider.value) - 1
-    timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
+
+function checkPosition(){
     if(parseInt(timeLineWrapper.style.left)> -sectionWidth){
         headerUnderscore.style.left = 5 + "px";
         console.log("mniejsze")
@@ -40,33 +27,18 @@ arrowBack.addEventListener("click", () =>{
         headerUnderscore.style.left = "calc(5px + 80%)";
         console.log("wieksze")
     }
-    console.log(slider.value)
+}
+
+arrowBack.addEventListener("click", () =>{
+    slider.value = parseInt(slider.value) - 1
+    timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
+    checkPosition();
 })
 
 arrowForward.addEventListener("click", () =>{
     slider.value = parseInt(slider.value) + 1
     timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
-    if(parseInt(timeLineWrapper.style.left)> -sectionWidth){
-        headerUnderscore.style.left = 5 + "px";
-        console.log("mniejsze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth && parseInt(timeLineWrapper.style.left) > -sectionWidth*2){
-        headerUnderscore.style.left = "calc(5px + 20%)";
-        console.log("wieksze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*2 && parseInt(timeLineWrapper.style.left) > -sectionWidth*3 ){
-        headerUnderscore.style.left = "calc(5px + 40%)";
-        console.log("xd")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*3 && parseInt(timeLineWrapper.style.left) > -sectionWidth*4){
-        headerUnderscore.style.left = "calc(5px + 60%)";
-        console.log("wieksze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*4 && parseInt(timeLineWrapper.style.left) > -sectionWidth*5){
-        headerUnderscore.style.left = "calc(5px + 80%)";
-        console.log("wieksze")
-    }
-    console.log(slider.value)
+    checkPosition();
 })
 
 
@@ -94,29 +66,28 @@ else {
 
 slider.addEventListener("input", ()=>{
     timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
-    if(parseInt(timeLineWrapper.style.left)> -sectionWidth){
-        headerUnderscore.style.left = 5 + "px";
-        console.log("mniejsze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth && parseInt(timeLineWrapper.style.left) > -sectionWidth*2){
-        headerUnderscore.style.left = "calc(5px + 20%)";
-        console.log("wieksze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*2 && parseInt(timeLineWrapper.style.left) > -sectionWidth*3 ){
-        headerUnderscore.style.left = "calc(5px + 40%)";
-        console.log("xd")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*3 && parseInt(timeLineWrapper.style.left) > -sectionWidth*4){
-        headerUnderscore.style.left = "calc(5px + 60%)";
-        console.log("wieksze")
-    }
-    else if(parseInt(timeLineWrapper.style.left) < -sectionWidth*4 && parseInt(timeLineWrapper.style.left) > -sectionWidth*5){
-        headerUnderscore.style.left = "calc(5px + 80%)";
-        console.log("wieksze")
-    }
+    checkPosition();
 })
 
 const headerUnderscore = document.querySelector(".header__active");
 
 
-console.log(sectionWidth)
+//Modal
+const modal = document.querySelector(".modal");
+const cover = document.querySelector(".cover");
+const items = document.querySelectorAll(".timeline__item")
+const closeModal = document.querySelector(".modal__close")
+
+
+items.forEach(item =>{
+item.addEventListener("click", ()=>{
+    modal.classList.add("active")
+    cover.classList.add("active")
+})
+
+})
+
+closeModal.addEventListener("click", () =>{
+    modal.classList.remove("active")
+    cover.classList.remove("active") 
+})
