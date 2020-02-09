@@ -8,6 +8,8 @@ body{
     font-family: 'Roboto',sans-serif;
     font-size: 16px;
     padding: 0 20px;
+    position: relative;
+    top: 0;
 }
 
 @media(min-width: 1024px){
@@ -20,4 +22,5 @@ body{
 @import './colors';
 @import './header';
 @import './timeline';
-@import './slider'
+@import './slider';
+@import '_modal.scss';
