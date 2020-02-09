@@ -6,6 +6,8 @@ const arrowBack = document.querySelector(".slidecontainer__back");
 const arrowForward = document.querySelector(".slidecontainer__forward")
 
 
+
+
 function checkPosition(){
     if(parseInt(timeLineWrapper.style.left)> -sectionWidth){
         headerUnderscore.style.left = 5 + "px";
@@ -64,6 +66,9 @@ else {
     value = ((-sectionWidth *4))/100; 
 }
 
+
+
+
 slider.addEventListener("input", ()=>{
     timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
     checkPosition();
@@ -91,3 +96,17 @@ closeModal.addEventListener("click", () =>{
     modal.classList.remove("active")
     cover.classList.remove("active") 
 })
+
+var swiper = new Swipe(document.querySelector('.timeline__wrapper'));
+swiper.onLeft(()=>{
+    slider.value = parseInt(slider.value) + 2
+    timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
+    checkPosition();
+})
+
+swiper.onRight(()=>{
+    slider.value = parseInt(slider.value) - 2
+    timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
+    checkPosition();
+})
+swiper.run();
