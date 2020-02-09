@@ -23,14 +23,23 @@
     &__wrapper{
         width: auto;
         display: flex;
+        justify-content: space-between;
     }
 
     &__section{
-        min-width: 100%;
+        min-width: 1200px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 400px;
+        margin-left: 200px;
+        border-right: 1px solid $gray;
+        padding-right: 80px;
+
+        &:first-child{
+            margin-left: 0px;
+        }
     }
+
 
     &__block{
         display: flex;
@@ -38,6 +47,8 @@
         justify-content: space-between;
         width: 300px;
         height: 100%;
+        flex-shrink: 0;
+        
     }
 
     &__item{
@@ -46,6 +57,7 @@
         justify-content: space-around;
         height: 180px;
         margin-bottom: 20px;
+        position: relative;
     }
 
     &__item:nth-child(even) > &__desc{
@@ -78,6 +90,14 @@
         z-index: 0;
         top: 0px;
         left: 0px;
+    }
+
+    &__separeteLine{
+        position: static;
+        width: 100px;
+        height: 2px;
+        background-color: $blue;
+        top: 100px;
     }
 
     &__itemTitle, &__itemView{
@@ -122,5 +142,31 @@
         font-style: italic;
     }
 
+   
+
   
+}
+
+@media(min-width: 1024px){
+    .timeline{
+
+        &__section{
+            min-width: 1100px;
+        }
+
+    }
+}
+
+@media(min-width: 1200px){
+    .timeline{
+
+        &__section{
+            min-width: 1900px;
+            padding-left: 100px;
+        }
+
+        &__block{
+            width: 300px;
+        }
+    }
 }
