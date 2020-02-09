@@ -97,7 +97,7 @@ closeModal.addEventListener("click", () =>{
     cover.classList.remove("active") 
 })
 
-var swiper = new Swipe(document.querySelector('.timeline__wrapper'));
+var swiper = new Swipe(document.querySelector('.timeline'));
 swiper.onLeft(()=>{
     slider.value = parseInt(slider.value) + 2
     timeLineWrapper.style.left = parseInt(slider.value) * value + "px";
