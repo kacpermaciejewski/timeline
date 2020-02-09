@@ -1,7 +1,5 @@
 .timeline{
     margin-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
     height: 400px;
     position: relative;
@@ -11,7 +9,7 @@
     &::before{
         content: '';
         height: 2px;
-        background-color: $gray;
+        background-color: $darkGray;
         width: 100%;
         position: absolute;
         left: 0px;
@@ -24,6 +22,7 @@
         width: auto;
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
 
     &__section{
@@ -151,7 +150,7 @@
     .timeline{
 
         &__section{
-            min-width: 1100px;
+            min-width: 1200px;
         }
 
     }
@@ -159,10 +158,10 @@
 
 @media(min-width: 1200px){
     .timeline{
+        margin-top: 150px;
 
         &__section{
-            min-width: 1900px;
-            padding-left: 100px;
+            min-width: 1600px;
         }
 
         &__block{

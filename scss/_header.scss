@@ -2,8 +2,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: 80px;
 
     &__head{
@@ -131,8 +129,8 @@
 
 @media(min-width: 1024px){
     .header{
-        padding-left: 20%;
-        padding-right: 20%;
+        
+
         &__head{
             width: 300px;
         }
@@ -148,12 +146,20 @@
             font-size: 2.5rem;
         }
 
-        &__item{
-            font-size: .9rem;
-            height: .9rem;
-        }
+    
 
     }
 
    
+}
+
+@media(min-width: 1200px){
+    .header{
+        padding-left: 20%;
+        padding-right: 20%;
+        &__item{
+            font-size: .8rem;
+            height: .8rem;
+        }
+    }
 }

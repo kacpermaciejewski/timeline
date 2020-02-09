@@ -7,9 +7,17 @@
 body{
     font-family: 'Roboto',sans-serif;
     font-size: 16px;
+    padding: 0 20px;
+}
+
+@media(min-width: 1024px){
+    body{
+        padding: 0 10%;
+    }
 }
 
 
 @import './colors';
 @import './header';
 @import './timeline';
+@import './slider'
